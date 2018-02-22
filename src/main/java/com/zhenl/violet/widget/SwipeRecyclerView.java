@@ -82,12 +82,12 @@ public class SwipeRecyclerView extends RecyclerView {
 
     public void addFootView(View view) {
         final LayoutManager manager = getLayoutManager();
-        if (view.getLayoutParams() == null) {
-            if (manager instanceof StaggeredGridLayoutManager) {
-                StaggeredGridLayoutManager.LayoutParams params = new StaggeredGridLayoutManager.LayoutParams(view.getLayoutParams());
-                params.setFullSpan(true);
-                view.setLayoutParams(params);
-            }
+        if (manager instanceof StaggeredGridLayoutManager) {
+            StaggeredGridLayoutManager.LayoutParams params = (StaggeredGridLayoutManager.LayoutParams) view.getLayoutParams();
+            if (params == null)
+                params = new StaggeredGridLayoutManager.LayoutParams(-1, -2);
+            params.setFullSpan(true);
+            view.setLayoutParams(params);
         }
         mFooterView = view;
         mFooterView.setVisibility(GONE);
