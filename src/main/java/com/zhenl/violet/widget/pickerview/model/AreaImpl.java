@@ -1,4 +1,4 @@
-package com.lin.widget.pickerview.model;
+package com.zhenl.violet.widget.pickerview.model;
 
 /**
  * Created by lin on 2017/8/10.

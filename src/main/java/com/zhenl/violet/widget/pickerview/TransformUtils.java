@@ -1,7 +1,7 @@
-package com.lin.widget.pickerview;
+package com.zhenl.violet.widget.pickerview;
 
-import com.lin.widget.pickerview.model.Area;
-import com.lin.widget.pickerview.model.AreaImpl;
+import com.zhenl.violet.widget.pickerview.model.Area;
+import com.zhenl.violet.widget.pickerview.model.AreaImpl;
 
 import java.util.ArrayList;
 import java.util.HashMap;

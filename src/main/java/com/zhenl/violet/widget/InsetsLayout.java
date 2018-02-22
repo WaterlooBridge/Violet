@@ -1,4 +1,4 @@
-package com.lin.widget;
+package com.zhenl.violet.widget;
 
 import android.content.Context;
 import android.graphics.Rect;

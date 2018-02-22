@@ -1,4 +1,4 @@
-package com.lin.widget.pickerview.lib;
+package com.zhenl.violet.widget.pickerview.lib;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -16,11 +16,11 @@ import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
 
-import com.lin.widget.R;
-import com.lin.widget.pickerview.adapter.WheelAdapter;
-import com.lin.widget.pickerview.listener.OnItemSelectedListener;
-import com.lin.widget.pickerview.model.Area;
-import com.lin.widget.pickerview.model.IPickerViewData;
+import com.zhenl.violet.R;
+import com.zhenl.violet.widget.pickerview.adapter.WheelAdapter;
+import com.zhenl.violet.widget.pickerview.listener.OnItemSelectedListener;
+import com.zhenl.violet.widget.pickerview.model.Area;
+import com.zhenl.violet.widget.pickerview.model.IPickerViewData;
 
 import java.util.Locale;
 import java.util.concurrent.Executors;

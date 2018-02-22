@@ -1,4 +1,4 @@
-package com.lin.widget.pickerview.view;
+package com.zhenl.violet.widget.pickerview.view;
 
 import android.app.Activity;
 import android.app.Dialog;
@@ -15,9 +15,9 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.FrameLayout;
 
-import com.lin.widget.R;
-import com.lin.widget.pickerview.listener.OnDismissListener;
-import com.lin.widget.pickerview.utils.PickerViewAnimateUtil;
+import com.zhenl.violet.R;
+import com.zhenl.violet.widget.pickerview.listener.OnDismissListener;
+import com.zhenl.violet.widget.pickerview.utils.PickerViewAnimateUtil;
 
 /**
  * Created by Sai on 15/11/22.

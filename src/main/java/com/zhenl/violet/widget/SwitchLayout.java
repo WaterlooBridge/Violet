@@ -1,4 +1,4 @@
-package com.lin.widget;
+package com.zhenl.violet.widget;
 
 import android.animation.ValueAnimator;
 import android.content.Context;
@@ -9,6 +9,8 @@ import android.graphics.RectF;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.widget.LinearLayout;
+
+import com.zhenl.violet.R;
 
 /**
  * Created by lin on 2017/4/13.

@@ -1,4 +1,4 @@
-package com.lin.widget;
+package com.zhenl.violet.widget;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;

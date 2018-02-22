@@ -1,4 +1,4 @@
-package com.lin.widget;
+package com.zhenl.violet.widget;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -8,7 +8,7 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
-import com.lin.widget.utils.DensityUtil;
+import com.zhenl.violet.widget.utils.DensityUtil;
 
 import java.util.ArrayList;
 import java.util.Arrays;

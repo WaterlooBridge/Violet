@@ -1,13 +1,13 @@
-package com.lin.widget.pickerview.view;
+package com.zhenl.violet.widget.pickerview.view;
 
 import android.graphics.Typeface;
 import android.view.View;
 
-import com.lin.widget.R;
-import com.lin.widget.pickerview.adapter.ArrayWheelAdapter;
-import com.lin.widget.pickerview.lib.WheelView;
-import com.lin.widget.pickerview.listener.OnItemSelectedListener;
-import com.lin.widget.pickerview.model.Area;
+import com.zhenl.violet.R;
+import com.zhenl.violet.widget.pickerview.adapter.ArrayWheelAdapter;
+import com.zhenl.violet.widget.pickerview.lib.WheelView;
+import com.zhenl.violet.widget.pickerview.listener.OnItemSelectedListener;
+import com.zhenl.violet.widget.pickerview.model.Area;
 
 import java.util.ArrayList;
 import java.util.List;

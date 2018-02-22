@@ -1,8 +1,8 @@
-package com.lin.widget.pickerview.utils;
+package com.zhenl.violet.widget.pickerview.utils;
 
 import android.view.Gravity;
 
-import com.lin.widget.R;
+import com.zhenl.violet.R;
 
 /**
  * Created by Sai on 15/8/9.

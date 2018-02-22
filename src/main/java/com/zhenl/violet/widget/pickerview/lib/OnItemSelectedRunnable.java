@@ -1,4 +1,4 @@
-package com.lin.widget.pickerview.lib;
+package com.zhenl.violet.widget.pickerview.lib;
 
 final class OnItemSelectedRunnable implements Runnable {
     final WheelView loopView;

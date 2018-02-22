@@ -1,9 +1,11 @@
-package com.lin.widget;
+package com.zhenl.violet.widget;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.zhenl.violet.R;
 
 /**
  * Created by lin on 2017/7/17.

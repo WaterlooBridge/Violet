@@ -1,4 +1,4 @@
-package com.lin.widget;
+package com.zhenl.violet.widget;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -19,7 +19,8 @@ import android.view.animation.TranslateAnimation;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
-import com.lin.widget.utils.DensityUtil;
+import com.zhenl.violet.R;
+import com.zhenl.violet.widget.utils.DensityUtil;
 
 import java.util.LinkedList;
 import java.util.Random;

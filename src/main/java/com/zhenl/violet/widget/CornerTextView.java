@@ -1,4 +1,4 @@
-package com.lin.widget;
+package com.zhenl.violet.widget;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -10,7 +10,8 @@ import android.os.Build;
 import android.support.v7.widget.AppCompatTextView;
 import android.util.AttributeSet;
 
-import com.lin.widget.utils.DensityUtil;
+import com.zhenl.violet.R;
+import com.zhenl.violet.widget.utils.DensityUtil;
 
 /**
  * Created by lin on 2017/8/15.

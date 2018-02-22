@@ -1,4 +1,4 @@
-package com.lin.widget.dialog;
+package com.zhenl.violet.widget.dialog;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -17,7 +17,7 @@ import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
-import com.lin.widget.R;
+import com.zhenl.violet.R;
 
 import java.lang.ref.WeakReference;
 
