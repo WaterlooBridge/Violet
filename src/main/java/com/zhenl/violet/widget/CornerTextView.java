@@ -34,9 +34,9 @@ public class CornerTextView extends AppCompatTextView {
     public CornerTextView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         TypedArray a = context.getTheme().obtainStyledAttributes(attrs, R.styleable.CornerTextView, defStyleAttr, 0);
-        mCornerSize = a.getDimensionPixelSize(R.styleable.CornerTextView_corner, 0);
-        mBorderColor = a.getColor(R.styleable.CornerTextView_borderColor, 0);
-        mBorderWidth = a.getColor(R.styleable.CornerTextView_borderWidth, DensityUtil.dp2px(getContext(), 1));
+        mCornerSize = a.getDimensionPixelSize(R.styleable.CornerTextView_CornerTextView_corner, 0);
+        mBorderColor = a.getColor(R.styleable.CornerTextView_CornerTextView_borderColor, 0);
+        mBorderWidth = a.getColor(R.styleable.CornerTextView_CornerTextView_borderWidth, DensityUtil.dp2px(getContext(), 1));
     }
 
     public void setBorderColor(int color) {

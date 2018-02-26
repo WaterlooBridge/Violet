@@ -19,8 +19,13 @@
     </declare-styleable>
 
     <declare-styleable name="CornerTextView">
-        <attr name="corner" format="reference|dimension"/>
-        <attr name="borderColor" format="color"/>
-        <attr name="borderWidth" format="reference|dimension"/>
+        <attr name="CornerTextView_corner" format="reference|dimension"/>
+        <attr name="CornerTextView_borderColor" format="color"/>
+        <attr name="CornerTextView_borderWidth" format="reference|dimension"/>
+    </declare-styleable>
+
+    <declare-styleable name="ShapeTextView">
+        <attr name="ShapeTextView_corner" format="reference|dimension"/>
+        <attr name="ShapeTextView_solid" format="color"/>
     </declare-styleable>
 </resources>

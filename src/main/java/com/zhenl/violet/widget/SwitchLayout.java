@@ -38,8 +38,8 @@ public class SwitchLayout extends LinearLayout {
     public SwitchLayout(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         TypedArray a = context.getTheme().obtainStyledAttributes(attrs, R.styleable.CornerTextView, defStyleAttr, 0);
-        corner = a.getDimensionPixelSize(R.styleable.CornerTextView_corner, 0);
-        color = a.getColor(R.styleable.CornerTextView_borderColor, 0);
+        corner = a.getDimensionPixelSize(R.styleable.CornerTextView_CornerTextView_corner, 0);
+        color = a.getColor(R.styleable.CornerTextView_CornerTextView_borderColor, 0);
         paint = new Paint();
         paint.setColor(color);
         paint.setAntiAlias(true);
