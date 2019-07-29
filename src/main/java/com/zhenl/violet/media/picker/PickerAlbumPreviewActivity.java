@@ -5,15 +5,15 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
-import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.fragment.app.Fragment;
+import androidx.viewpager.widget.ViewPager;
 
 import com.zhenl.violet.R;
 import com.zhenl.violet.media.ToolBarOptions;
@@ -27,7 +27,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class PickerAlbumPreviewActivity extends UI implements OnClickListener, OnPageChangeListener {
+public class PickerAlbumPreviewActivity extends UI implements OnClickListener, ViewPager.OnPageChangeListener {
 
     public static final int RESULT_FROM_USER = RESULT_FIRST_USER + 1;
 

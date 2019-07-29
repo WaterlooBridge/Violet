@@ -7,7 +7,7 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Region;
 import android.os.Build;
-import android.support.v7.widget.AppCompatTextView;
+import androidx.appcompat.widget.AppCompatTextView;
 import android.util.AttributeSet;
 
 import com.zhenl.violet.R;
@@ -39,9 +39,22 @@ public class CornerTextView extends AppCompatTextView {
         mBorderWidth = a.getDimensionPixelSize(R.styleable.CornerTextView_CornerTextView_borderWidth, DensityUtil.dp2px(getContext(), 1));
     }
 
-    public void setBorderColor(int color) {
-        mBorderColor = color;
-        setTextColor(color);
+    public int getCornerSize() {
+        return mCornerSize;
+    }
+
+    public void setCornerSize(int mCornerSize) {
+        this.mCornerSize = mCornerSize;
+        postInvalidate();
+    }
+
+    public int getBorderColor() {
+        return mBorderColor;
+    }
+
+    public void setBorderColor(int mBorderColor) {
+        this.mBorderColor = mBorderColor;
+        postInvalidate();
     }
 
     @Override

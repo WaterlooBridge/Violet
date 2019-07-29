@@ -1,10 +1,9 @@
 package com.zhenl.violet.widget;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.drawable.GradientDrawable;
-import android.support.v7.widget.AppCompatTextView;
+
+import androidx.appcompat.widget.AppCompatTextView;
 import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.View;
@@ -17,7 +16,6 @@ import android.view.animation.Interpolator;
 import android.view.animation.ScaleAnimation;
 import android.view.animation.TranslateAnimation;
 import android.widget.FrameLayout;
-import android.widget.TextView;
 
 import com.zhenl.violet.R;
 import com.zhenl.violet.widget.utils.DensityUtil;

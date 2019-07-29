@@ -1,15 +1,14 @@
 apply plugin: 'com.android.library'
 
-def cfg = rootProject.ext.configuration
-def libs = rootProject.ext.libraries
-
 android {
-    compileSdkVersion cfg.compileVersion
+    compileSdkVersion rootProject.compileSdkVersion
+    buildToolsVersion rootProject.buildToolsVersion
+
     defaultConfig {
-        minSdkVersion cfg.minSdk
-        targetSdkVersion cfg.targetSdk
-        versionCode cfg.version_code
-        versionName cfg.version_name
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
+        versionCode rootProject.versionCode
+        versionName rootProject.versionName
 
     }
     buildTypes {
@@ -21,9 +20,8 @@ android {
 }
 
 dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
-    api "com.android.support:appcompat-v7:${libs.supportVersion}"
-    api "com.android.support:recyclerview-v7:${libs.supportVersion}"
-    api "com.android.support:design:${libs.supportVersion}"
-    api 'com.github.bumptech.glide:glide:3.7.0'
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    api "androidx.appcompat:appcompat:$rootProject.appcompatLibraryVersion"
+    api 'androidx.recyclerview:recyclerview:1.0.0'
+    api 'com.github.bumptech.glide:glide:3.8.0'
 }
