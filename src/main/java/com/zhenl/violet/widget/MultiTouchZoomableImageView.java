@@ -164,16 +164,16 @@ public class MultiTouchZoomableImageView extends BaseZoomableImageView {
             final float FLING_MIN_VELOCITY = 200;
             if (e1.getX() - e2.getX() > FLING_MIN_DISTANCE
                     && Math.abs(velocityX) > FLING_MIN_VELOCITY) {
-                Log.i("MultiTouchZoomableImageView", "Fling Left");
+                Log.i("MultiTouchZoomable", "Fling Left");
             } else if (e2.getX() - e1.getX() > FLING_MIN_DISTANCE
                     && Math.abs(velocityX) > FLING_MIN_VELOCITY) {
-                Log.i("MultiTouchZoomableImageView", "Fling Right");
+                Log.i("MultiTouchZoomable", "Fling Right");
             } else if (e1.getY() - e2.getY() > FLING_MIN_DISTANCE
                     && Math.abs(velocityY) > FLING_MIN_VELOCITY) {
-                Log.i("MultiTouchZoomableImageView", "Fling Up");
+                Log.i("MultiTouchZoomable", "Fling Up");
             } else if (e2.getY() - e1.getY() > FLING_MIN_DISTANCE
                     && Math.abs(velocityY) > FLING_MIN_VELOCITY) {
-                Log.i("MultiTouchZoomableImageView", "Fling Down");
+                Log.i("MultiTouchZoomable", "Fling Down");
 
                 if (!transIgnoreScale && getScale() <= zoomDefault()) {
                     mImageGestureListener.onImageGestureFlingDown();
