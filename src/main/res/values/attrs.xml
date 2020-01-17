@@ -1,31 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="TabLayout">
-        <attr name="textSelectColor" format="color"/>
-        <attr name="textUnSelectColor" format="color"/>
-    </declare-styleable>
 
-    <declare-styleable name="pickerview">
-        <attr name="pickerview_gravity">
-            <enum name="center" value="17"/>
-            <enum name="left" value="3"/>
-            <enum name="right" value="5"/>
-        </attr>
-        <attr name="pickerview_textSize" format="dimension"/>
-        <attr name="pickerview_textColorOut" format="color"/>
-        <attr name="pickerview_textColorCenter" format="color"/>
-        <attr name="pickerview_dividerColor" format="color"/>
-        <attr name="pickerview_lineSpacingMultiplier" format="float"/>
-    </declare-styleable>
+    <attr name="corner" format="reference|dimension" />
 
     <declare-styleable name="CornerTextView">
-        <attr name="CornerTextView_corner" format="reference|dimension"/>
-        <attr name="CornerTextView_borderColor" format="color"/>
-        <attr name="CornerTextView_borderWidth" format="reference|dimension"/>
+        <attr name="corner" />
+        <attr name="borderColor" format="color" />
+        <attr name="borderWidth" format="reference|dimension" />
     </declare-styleable>
 
     <declare-styleable name="ShapeTextView">
-        <attr name="ShapeTextView_corner" format="reference|dimension"/>
-        <attr name="ShapeTextView_solid" format="color"/>
+        <attr name="corner" />
+        <attr name="solid" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="SideBar">
+        <attr name="android:textSize" format="reference|dimension" />
+        <attr name="android:textColor" format="color" />
     </declare-styleable>
 </resources>

@@ -1,6 +1,7 @@
 package com.zhenl.violet.widget;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -8,6 +9,7 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
+import com.zhenl.violet.R;
 import com.zhenl.violet.widget.utils.DensityUtil;
 
 import java.util.ArrayList;
@@ -53,10 +55,16 @@ public class SideBar extends View {
             letter = Arrays.asList(letterStrings);
         }
 
+        TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.SideBar);
+
         paint = new Paint();
         paint.setAntiAlias(true);
-        paint.setTextSize(DensityUtil.dp2px(context, 12));
-        paint.setColor(Color.parseColor("#222222"));
+        paint.setTextSize(ta.getDimensionPixelSize(R.styleable.SideBar_android_textSize,
+                DensityUtil.dp2px(context, 12)));
+        paint.setColor(ta.getColor(R.styleable.SideBar_android_textColor,
+                Color.parseColor("#222222")));
+
+        ta.recycle();
     }
 
     @Override

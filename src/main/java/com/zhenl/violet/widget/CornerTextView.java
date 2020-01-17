@@ -7,8 +7,9 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Region;
 import android.os.Build;
-import androidx.appcompat.widget.AppCompatTextView;
 import android.util.AttributeSet;
+
+import androidx.appcompat.widget.AppCompatTextView;
 
 import com.zhenl.violet.R;
 import com.zhenl.violet.widget.utils.DensityUtil;
@@ -23,6 +24,8 @@ public class CornerTextView extends AppCompatTextView {
     private int mBorderColor;
     private int mBorderWidth;
 
+    private Paint paint;
+
     public CornerTextView(Context context) {
         this(context, null);
     }
@@ -34,17 +37,21 @@ public class CornerTextView extends AppCompatTextView {
     public CornerTextView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         TypedArray a = context.getTheme().obtainStyledAttributes(attrs, R.styleable.CornerTextView, defStyleAttr, 0);
-        mCornerSize = a.getDimensionPixelSize(R.styleable.CornerTextView_CornerTextView_corner, 0);
-        mBorderColor = a.getColor(R.styleable.CornerTextView_CornerTextView_borderColor, 0);
-        mBorderWidth = a.getDimensionPixelSize(R.styleable.CornerTextView_CornerTextView_borderWidth, DensityUtil.dp2px(getContext(), 1));
+        mCornerSize = a.getDimensionPixelSize(R.styleable.CornerTextView_corner, 0);
+        mBorderColor = a.getColor(R.styleable.CornerTextView_borderColor, 0);
+        mBorderWidth = a.getDimensionPixelSize(R.styleable.CornerTextView_borderWidth, DensityUtil.dp2px(getContext(), 1));
+
+        paint = new Paint();
+        paint.setAntiAlias(true);
+        paint.setColor(mBorderColor);
     }
 
     public int getCornerSize() {
         return mCornerSize;
     }
 
-    public void setCornerSize(int mCornerSize) {
-        this.mCornerSize = mCornerSize;
+    public void setCornerSize(int size) {
+        this.mCornerSize = size;
         postInvalidate();
     }
 
@@ -52,17 +59,24 @@ public class CornerTextView extends AppCompatTextView {
         return mBorderColor;
     }
 
-    public void setBorderColor(int mBorderColor) {
-        this.mBorderColor = mBorderColor;
+    public void setBorderColor(int color) {
+        this.mBorderColor = color;
+        paint.setColor(mBorderColor);
+        postInvalidate();
+    }
+
+    public int getBorderWidth() {
+        return mBorderWidth;
+    }
+
+    public void setBorderWidth(int width) {
+        this.mBorderWidth = width;
         postInvalidate();
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
-        Paint paint = new Paint();
         int strokeWidth = mBorderWidth;
-        paint.setAntiAlias(true);
-        paint.setColor(mBorderColor);
         Path path = new Path();
         path.moveTo(0, mCornerSize);
         path.quadTo(0, 0, mCornerSize, 0);
