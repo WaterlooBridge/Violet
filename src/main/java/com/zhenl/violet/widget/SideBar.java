@@ -10,7 +10,7 @@ import android.view.MotionEvent;
 import android.view.View;
 
 import com.zhenl.violet.R;
-import com.zhenl.violet.widget.utils.DensityUtil;
+import com.zhenl.violet.utils.DensityUtil;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -62,7 +62,7 @@ public class SideBar extends View {
         paint.setTextSize(ta.getDimensionPixelSize(R.styleable.SideBar_android_textSize,
                 DensityUtil.dp2px(context, 12)));
         paint.setColor(ta.getColor(R.styleable.SideBar_android_textColor,
-                Color.parseColor("#222222")));
+                Color.BLACK));
 
         ta.recycle();
     }
@@ -91,7 +91,6 @@ public class SideBar extends View {
             finalHeight = (int) charWidthAndHeight * letter.size() + getPaddingBottom() + getPaddingTop();
         }
 
-        //        Log.e("--------------->", MeasureSpec.getSize(widthMeasureSpec) + "    " + MeasureSpec.getSize(heightMeasureSpec));
         setMeasuredDimension(finalWidth, finalHeight);
     }
 
@@ -146,9 +145,6 @@ public class SideBar extends View {
         }
     }
 
-    /**
-     * 回调接口。
-     */
     public interface OnCurrentLetterListener {
         void showCurrentLetter(String currentLetter);
 

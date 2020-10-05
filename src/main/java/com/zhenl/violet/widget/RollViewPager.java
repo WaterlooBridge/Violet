@@ -1,6 +1,7 @@
 package com.zhenl.violet.widget;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.os.Message;
 import android.util.AttributeSet;
@@ -12,13 +13,16 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.resource.drawable.GlideDrawable;
-import com.bumptech.glide.request.animation.GlideAnimation;
-import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
+import com.bumptech.glide.request.target.DrawableImageViewTarget;
+import com.bumptech.glide.request.transition.Transition;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
@@ -38,7 +42,9 @@ public class RollViewPager extends ViewPager {
     private int lastPosition;
     private boolean isScrolling;
     private RollPagerAdapter adapter;
-    private OnPageChangeListener listener = new OnPageChangeListener() {
+    private Handler handler = new ScrollHandler(this);
+
+    private OnPageChangeListener mOnPageChangeListener = new OnPageChangeListener() {
         @Override
         public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
@@ -70,7 +76,6 @@ public class RollViewPager extends ViewPager {
                     setCurrentItem(1, false);
         }
     };
-    private Handler handler = new ScrollHandler(this);
 
     public RollViewPager(Context context) {
         super(context);
@@ -83,10 +88,18 @@ public class RollViewPager extends ViewPager {
     }
 
     public void init() {
-        imageUrl = new ArrayList<String>();
+        imageUrl = new ArrayList<>();
         adapter = new RollPagerAdapter();
-        adapter.setListener(listener2);
-        this.addOnPageChangeListener(listener);
+        adapter.setListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mOnItemClickListener != null) {
+                    int pos = v.getId();
+                    mOnItemClickListener.onItemClick(v, pos);
+                }
+            }
+        });
+        this.addOnPageChangeListener(mOnPageChangeListener);
     }
 
     public void setWrapHeight(boolean flag) {
@@ -156,10 +169,6 @@ public class RollViewPager extends ViewPager {
             this.adapter.setAdapter(adapter);
     }
 
-    public void setOnPartRefreshListener(OnPartRefreshListener listener) {
-        adapter.setOnPartRefreshListener(listener);
-    }
-
     public void reset() {
         currentItem = 1;
         setCurrentItem(1, false);
@@ -212,9 +221,10 @@ public class RollViewPager extends ViewPager {
 
         @Override
         public int getCount() {
-            return imageUrl.size() == 0 ? 0 : imageUrl.size();
+            return imageUrl.size();
         }
 
+        @NotNull
         @Override
         public Object instantiateItem(ViewGroup container, int position) {
             position = position % imageUrl.size();
@@ -239,7 +249,7 @@ public class RollViewPager extends ViewPager {
             Glide.with(container.getContext()).load(imageUrl.get(position))
                     .dontAnimate()
                     .centerCrop()
-                    .into(isWrapHeight ? new WrapTarget(iv) : new GlideDrawableImageViewTarget(iv));
+                    .into(isWrapHeight ? new WrapTarget(iv) : new DrawableImageViewTarget(iv));
             isWrapHeight = false;
             return view;
         }
@@ -268,7 +278,7 @@ public class RollViewPager extends ViewPager {
         }
     }
 
-    private static class WrapTarget extends GlideDrawableImageViewTarget {
+    private static class WrapTarget extends DrawableImageViewTarget {
 
         private ImageView view;
 
@@ -278,11 +288,11 @@ public class RollViewPager extends ViewPager {
         }
 
         @Override
-        public void onResourceReady(GlideDrawable resource, GlideAnimation<? super GlideDrawable> animation) {
+        public void onResourceReady(@NonNull Drawable resource, @Nullable Transition<? super Drawable> transition) {
             float scale = (float) resource.getIntrinsicHeight() / resource.getIntrinsicWidth();
             int height = (int) (view.getResources().getDisplayMetrics().widthPixels * scale);
             getViewPager().getLayoutParams().height = height;
-            super.onResourceReady(resource, animation);
+            super.onResourceReady(resource, transition);
         }
 
         public ViewGroup getViewPager() {
@@ -301,20 +311,14 @@ public class RollViewPager extends ViewPager {
         }
     }
 
-    private OnClickListener listener2 = new OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            if (listener3 != null) {
-                int pos = v.getId();
-                listener3.onItemClick(v, pos);
-            }
-        }
-    };
-
-    private OnItemClickListener listener3;
+    private OnItemClickListener mOnItemClickListener;
 
     public void setOnItemClickListener(final OnItemClickListener listener) {
-        listener3 = listener;
+        mOnItemClickListener = listener;
+    }
+
+    public void setOnPartRefreshListener(OnPartRefreshListener listener) {
+        adapter.setOnPartRefreshListener(listener);
     }
 
     public interface OnItemClickListener {
@@ -329,7 +333,7 @@ public class RollViewPager extends ViewPager {
         private WeakReference<RollViewPager> reference;
 
         public ScrollHandler(RollViewPager pager) {
-            reference = new WeakReference<RollViewPager>(pager);
+            reference = new WeakReference<>(pager);
         }
 
         @Override

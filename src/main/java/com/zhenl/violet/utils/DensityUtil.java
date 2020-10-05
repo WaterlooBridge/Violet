@@ -1,4 +1,4 @@
-package com.zhenl.violet.widget.utils;
+package com.zhenl.violet.utils;
 
 import android.content.Context;
 import android.content.res.Resources;

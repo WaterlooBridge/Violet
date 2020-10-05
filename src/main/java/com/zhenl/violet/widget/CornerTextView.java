@@ -12,7 +12,7 @@ import android.util.AttributeSet;
 import androidx.appcompat.widget.AppCompatTextView;
 
 import com.zhenl.violet.R;
-import com.zhenl.violet.widget.utils.DensityUtil;
+import com.zhenl.violet.utils.DensityUtil;
 
 /**
  * Created by lin on 2017/8/15.

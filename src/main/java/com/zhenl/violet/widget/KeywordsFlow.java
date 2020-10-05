@@ -18,7 +18,7 @@ import android.view.animation.TranslateAnimation;
 import android.widget.FrameLayout;
 
 import com.zhenl.violet.R;
-import com.zhenl.violet.widget.utils.DensityUtil;
+import com.zhenl.violet.utils.DensityUtil;
 
 import java.util.LinkedList;
 import java.util.Random;
