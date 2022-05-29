@@ -1,25 +1,5 @@
 <resources>
 
-    <string name="empty"></string>
-    <string name="cancel">取消</string>
-
-    <!-- image picker -->
-    <string name="input_panel_take">拍 摄</string>
-    <string name="picker_image_preview">预览</string>
-    <string name="picker_image_send">发送</string>
-    <string name="picker_image_folder">相册</string>
-    <string name="picker_image_album_loading">相册加载中…</string>
-    <string name="picker_image_album_empty">相册中没有图片！</string>
-    <string name="picker_image_folder_info">共%d张</string>
-    <string name="picker_image_exceed_max_image_select">最多选择%d张图片！</string>
-    <string name="picker_image_send_select">完成（%d）</string>
-    <string name="picker_image_preview_original">发送原图</string>
-    <string name="picker_image_preview_original_select">发送原图（%s）</string>
-    <string name="picker_image_error">获取图片出错</string>
-    <string name="choose_from_photo_album">从手机相册选择</string>
-    <string name="choose">选取</string>
-    <string name="crop">裁剪</string>
-
     <string name="brvah_load_complete">点击加载更多</string>
     <string name="brvah_load_end">没有更多数据</string>
     <string name="brvah_load_failed">加载失败，请点我重试</string>

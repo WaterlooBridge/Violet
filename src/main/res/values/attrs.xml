@@ -1,21 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <attr name="corner" format="reference|dimension" />
-
-    <declare-styleable name="CornerTextView">
-        <attr name="corner" />
-        <attr name="borderColor" format="color" />
-        <attr name="borderWidth" format="reference|dimension" />
-    </declare-styleable>
-
-    <declare-styleable name="ShapeTextView">
-        <attr name="corner" />
-        <attr name="solid" format="color" />
-    </declare-styleable>
-
-    <declare-styleable name="SideBar">
-        <attr name="android:textSize" format="reference|dimension" />
-        <attr name="android:textColor" format="color" />
+    <declare-styleable name="RoundWidget">
+        <attr name="rw_backgroundColor" format="color" />
+        <attr name="rw_borderColor" format="color" />
+        <attr name="rw_borderWidth" format="dimension" />
+        <attr name="rw_isRadiusAdjustBounds" format="boolean" />
+        <attr name="rw_radius" format="dimension" />
+        <attr name="rw_radiusTopLeft" format="dimension" />
+        <attr name="rw_radiusTopRight" format="dimension" />
+        <attr name="rw_radiusBottomLeft" format="dimension" />
+        <attr name="rw_radiusBottomRight" format="dimension" />
     </declare-styleable>
 </resources>

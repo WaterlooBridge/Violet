@@ -8,8 +8,6 @@ android {
     defaultConfig {
         minSdkVersion rootProject.minSdkVersion
         targetSdkVersion rootProject.targetSdkVersion
-        versionCode rootProject.versionCode
-        versionName rootProject.versionName
 
     }
     buildTypes {
@@ -25,7 +23,5 @@ dependencies {
     api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     api "androidx.appcompat:appcompat:$appcompatLibraryVersion"
     api "androidx.core:core-ktx:$coreLibraryVersion"
-    api "com.google.android.material:material:$materialLibraryVersion"
-    api "com.github.bumptech.glide:glide:$glideLibraryVersion"
     api "androidx.paging:paging-runtime-ktx:$pagingLibraryVersion"
 }
